@@ -9,7 +9,7 @@
         if($searchSong['items'])
         {
             $songId = $searchSong['items'][0]['id']['videoId'];
-            $getAudio = $getAudio = json_decode(request("http://josemicoronil.hol.es/youtube_get_video_url.php?url=https://www.youtube.com/watch?v=$songId"),TRUE);
+            $getAudio = json_decode(request("http://josemicoronil.hol.es/youtube_get_video_url.php?url=https://www.youtube.com/watch?v=$songId"),TRUE);
             if($getAudio[2]['url'])
             {
                 echo jsonData($getAudio[2]['url']);
