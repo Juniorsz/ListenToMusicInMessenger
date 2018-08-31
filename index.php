@@ -1,4 +1,5 @@
 <?php
+    header('Content-Type: application/json');
     if(isset($_GET['song']))
     {
         $song = $_GET['song'];
@@ -47,7 +48,7 @@
                 )
             ),
         );
-        return json_encode($arr);
+        return json_encode($arr, JSON_PRETTY_PRINT);
     }
 ?>
 
