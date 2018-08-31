@@ -12,7 +12,7 @@
             $getAudio = $getAudio = json_decode(request("http://josemicoronil.hol.es/youtube_get_video_url.php?url=https://www.youtube.com/watch?v=$songId"),TRUE);
             if($getAudio[2]['url'])
             {
-                echo jsonData($getAudio[2]['url'],$searchSong['items'][0]['snippet']['title']);
+                echo jsonData($getAudio[2]['url']);
             }
         }
     }
@@ -29,7 +29,7 @@
         ]);
         return $response = curl_exec($ch);
     }
-    function jsonData($urlSong,$song)
+    function jsonData($urlSong)
     {
         $arr = array (
             'messages' =>
@@ -42,7 +42,6 @@
                          'payload' => 
                           array(
                              'url' => $urlSong,
-                             'text' => $song
                           )
                      )
                 )
